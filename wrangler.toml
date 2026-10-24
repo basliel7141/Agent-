@@ -1,0 +1,6 @@
+name = "agent"
+main = "src/index.ts"
+compatibility_date = "2026-10-24"
+
+[vars]
+BOT_LANGUAGE_DEFAULT = "am"
