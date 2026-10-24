@@ -1,16 +1,13 @@
 {
-  "name": "agent",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Telegram Agent and BetShop Manager",
-  "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
-    "typecheck": "tsc --noEmit"
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "lib": ["ES2022", "DOM"],
+    "types": ["@cloudflare/workers-types"],
+    "skipLibCheck": true,
+    "noEmit": true
   },
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.7.0",
-    "typescript": "^5.8.3",
-    "wrangler": "^4.40.0"
-  }
+  "include": ["index.ts"]
 }
