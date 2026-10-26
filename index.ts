@@ -66,8 +66,12 @@ export default {
     }
 
     try {
-      if (typeof update.update_id === "number") {
-        const isNew = await registerUpdate(env, update.update_id);
+  if (update.callback_query) {
+    await answerCallback(env, update.callback_query.id);
+  }
+
+  if (typeof update.update_id === "number") {
+    const isNew = await registerUpdate(env, update.update_id);
 
         if (!isNew) {
           return new Response("ok", { status: 200 });
@@ -102,7 +106,6 @@ export default {
         const chatId = cq.message?.chat.id;
         const lang = cq.data === "lang_en" ? "en" : "am";
 
-        await answerCallback(env, cq.id);
 
         if (chatId) {
           await saveLanguage(env, cq.from.id, lang);
