@@ -5,6 +5,7 @@ compatibility_date = "2026-10-24"
 
 [vars]
 BOT_LANGUAGE_DEFAULT = "am"
+SUPABASE_URL = "https://ppwzysmjpckhnzayuvso.supabase.co"
 
 [observability]
 enabled = true
